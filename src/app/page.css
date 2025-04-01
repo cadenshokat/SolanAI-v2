@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Exo:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap');
+
+.page {
+    /* Fill the screen */
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+  
+    /* Set the background image */
+    background: url("/BG3.svg") no-repeat center center;
+    background-size: 100%;
+  }
+  
+.title {
+    font-size: 7rem;
+    color: #ffffff;
+}
+
+.orbitron-bold {
+    font-family: 'Orbitron', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+.exo-bold {
+    font-family: "Exo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.arial-bold {
+    font-family: "Arial", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+/* Container for the left and right sections */
+.info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    gap: 40px;
+  }
+  
+.info {
+  background: #000000;
+
+}
+
+  /* Left section styling */
+  .info-left {
+    flex: 1;
+    text-align: left;
+    padding-right: 20px;
+  }
+  
+  /* Right section with a grid for feature boxes */
+  .info-right {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Feature box styling */
+  .feature-box {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-box:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Gradient text effect for important words */
+  .gradient-text {
+    background: linear-gradient(90deg, #9945FF, #00FFA3, #00D1FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Optional: Make sure your paragraphs in .info remain white */
+  .info p {
+    color: #ffffff;
+  }
+  
+
+.how-to {
+    /* Fill the screen */
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-content: center;
+        justify-content: flex-start;
+        text-align: center;
+        flex-direction: column;
+        padding: 30px;  
+        background: #000000;
+    }
+    
+.how-to h1 {
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+.timeline {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+.timeline-step {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  margin-top: 15rem;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.timeline-step a {
+
+  font-size: .65rem;
+}
+
+.question-boxes {
+  
+  color: #ffffff;
+  gap: 40px;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 1rem;
+  display: flex;
+  margin-top: 5rem;
+  margin-left: 27rem;
+}
+
+/* Styling for each individual question box */
+.question-box {
+  padding: 1rem;
+  border: 2px solid;
+  border-image: linear-gradient(45deg, #9945FF, #00FFA3, #00D1FF) 1;
+  border-radius: 50%;
+  text-align: center;
+  flex: 1;
+}
+
+.step-text {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.wallet-icon {
+  display: flex;
+  justify-content: center;
+  padding: .9rem;
+}

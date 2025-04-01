@@ -1,0 +1,58 @@
+.how-to {
+    width: 100%;
+    min-height: 100vh;
+    background: #000000;
+    color: #ffffff;
+  
+    /* Flex column to stack content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* pinned at the top */
+    text-align: center;
+  
+    padding: 30px;
+  }
+  
+  /* Large heading style */
+  .how-to h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* The container that holds the steps */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* spacing between steps */
+    max-width: 600px; /* limit width for readability */
+    width: 100%;
+    margin-top: 2rem;
+  }
+  
+  /* Each step in the timeline */
+  .timeline-step {
+    position: relative;
+    padding-left: 1rem;
+    text-align: left; /* text alignment if you prefer a left-justified timeline */
+    border-left: 2px solid #ffffff33; /* faint line to hint a vertical timeline */
+    font-size: 1.25rem;
+    opacity: 0; /* start hidden (GSAP will fade in) */
+    color: #ffffff;
+  }
+  
+  /* Add a small circle or bullet at each step */
+  .timeline-step::before {
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 0;
+    transform: translate(-50%, 0);
+    width: 12px;
+    height: 12px;
+    background-color: #ffffff;
+    border-radius: 50%;
+  }
+
+  
+  

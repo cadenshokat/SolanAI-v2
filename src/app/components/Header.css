@@ -1,0 +1,72 @@
+/* Header.css */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Orbitron:wght@400..900&display=swap');
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Logo on left, nav in center/right */
+    padding: .5rem 1.5rem;
+    background-color: #000000;
+    color: #c7c7c7;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+  }
+  
+  .header-logo {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+}
+  
+  .Title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    /* font-family is applied via next/font so no need to specify here unless fallback is needed */
+  }
+
+  .Title:hover {
+    color: #cecece;
+  }
+
+  .orbitron-bold {
+    font-family: 'Orbitron', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .header-nav {
+    flex: 1; /* take up available space */
+    display: flex;
+    justify-content: center; /* center the navigation links */
+    margin-right: 11.5rem;
+    gap: 2rem;
+  }
+  
+  .header-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: .9rem;
+    transition: color 0.3s ease;
+  }
+  
+  .header-nav a:hover {
+    color: #cecece;
+  }
+  
+  .header-button {
+    padding: 0.5rem 1rem;
+    background-color: #00d4ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .header-button:hover {
+    background-color: #00a3cc;
+  }
+  
