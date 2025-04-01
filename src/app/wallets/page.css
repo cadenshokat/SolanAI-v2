@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Orbitron:wght@400..900&display=swap');
+
+.orbitron-bold {
+  font-family: 'Orbitron', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Main container for left panel + right panel */
+.dashboard-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background: #000; /* Keep the black background */
+}
+
+/* LEFT PANEL */
+.left-panel {
+  width: 20%;
+  height: 100vh;
+  background: rgba(215, 215, 215, 0.1);
+  box-shadow: 0 4px 6px rgba(146, 146, 146, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.panel-header {
+  width: 100%;
+  height: 15rem;
+  border-bottom: 1px solid #484848;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 1rem;
+}
+
+.logo-section {
+  margin-left: 1rem;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.Title {
+  font-size: 1.6rem;
+  color: #ffffff;
+}
+
+.Title:hover {
+  color: #cecece;
+}
+
+.logo-description {
+  color: #ffffff;
+  font-size: 0.7rem;
+  margin: 1rem;
+}
+
+.section-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-left: 4rem;
+}
+
+.chat-icon:hover {
+  background-color: #cecece;
+  border-radius: 20px;
+}
+
+/* Tracker links box under header */
+.panel-links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tracker-links {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  width: 100%;
+}
+
+.link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 12px;
+  padding: 0.5rem 0rem;
+  font-weight: 900;
+
+}
+
+.link:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.link-text {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 2.2rem;
+  gap: 10px;
+}
+
+/* RIGHT PANEL / Wallet Container */
+.wallet-container {
+  width: 80%;
+  padding: 2rem;
+  background: #000000;
+  overflow-y: auto;
+  box-sizing: border-box;
+  margin-left: 10rem; /* If you want extra spacing from left panel */
+}
+
+/* Wallet input styling */
+.wallet-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+
+.wallet-input-field {
+  flex: 1;
+  padding: 8px;
+  border-radius: 10px;
+  background-color: #2d2d2d;
+  color: #ffffff;
+  border: 2px solid #2d2d2d;
+  padding: 10px 15px;
+}
+
+.wallet-input-field:focus {
+  background-color: #000000;
+  outline: none;
+  color: #ffffff;
+}
+
+.wallet-input-field:hover {
+  color: #ffffff;
+  background-color: #000000;
+}
+
+/* Wallet List Container */
+.wallet-list-container {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wallet-list-title {
+  color: #b4b4b4;
+}
+
+/* Wallet Items */
+.wallet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wallet-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000000;
+  border: 2px solid #3a3a3a;
+  padding: 1rem;
+  border-radius: 15px;
+  color: #ffffff;
+  width: 60%;
+  height: 3rem;
+}
+
+.wallet-details {
+  display: flex;
+  align-items: center;
+}
+
+.wallet-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Copy icon / checkmark */
+.copy-icon {
+  cursor: pointer;
+  color: #ffffff;
+  margin-left: 10px;
+  transition: color 0.2s ease-in-out;
+  
+}
+
+.copy-icon:hover {
+  color: #b4b4b4;
+}
+
+/* Remove button */
+.remove-button {
+  background: none;
+  border: 1px solid #555;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.remove-button:hover {
+  background: #333;
+}
+
+/* Copy message */
+.copy-message {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.copy-message.show {
+  opacity: 1;
+}
+

@@ -1,103 +1,206 @@
+"use client";
 import Image from "next/image";
+import {Header} from "./components/Header";
+import React, { useEffect } from "react";
+import "./page.css";
+import { ScrollContainer, ScrollPage, Animator, MoveOut, Sticky, Fade, batch, Move } from "react-scroll-motion"; 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Button } from "./components/Button";
+import { LinearGradient } from "react-text-gradients"; 
+import { BubbleNumber } from "./components/BubbleNumber";
+import { IoWalletOutline } from "react-icons/io5";
+
+
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  useEffect(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".timeline",    // use the timeline container as trigger
+        start: "top top",        // animation starts when the timeline container's top reaches 75% of the viewport
+        scrub: true,             // ties the animation progress to the scrollbar
+        markers: false,           // enable markers for debugging
+        end: "+=3000",    
+      }
+    });
+
+    // Hard code the animation for each timeline step sequentially.
+    tl.fromTo(
+      ".timeline-step:nth-child(1)",
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1 }
+    )
+    // Fade out the first step after a slight delay
+    .to(
+      ".timeline-step:nth-child(1)",
+      { opacity: 0, y: -50, duration: 1 },
+      "+=1"
+    )
+    .fromTo(
+      ".timeline-step:nth-child(2)",
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1 }
+    )
+    .to(
+      ".timeline-step:nth-child(2)",
+      { opacity: 0, y: -50, duration: 1 },
+      "+=1"
+    )
+    .fromTo(
+      ".timeline-step:nth-child(3)",
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1 }
+    )
+    .to(
+      ".timeline-step:nth-child(3)",
+      { opacity: 0, y: -50, duration: 1 },
+      "+=1"
+    )
+    .fromTo(
+      ".timeline-step:nth-child(4)",
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1 }
+    )
+    .to(
+      ".timeline-step:nth-child(4)",
+      { opacity: 0, y: -50, duration: 1 },
+      "+=1"
+    );
+  }, []);
+
+  useEffect(() => {
+    const panels = gsap.utils.toArray(".panel");
+
+    panels.forEach((panel) => {
+        ScrollTrigger.create({
+            trigger: panel,
+            start: "top top",
+            pin: true,
+            pinSpacing: false,
+            markers: false,
+        });
+    });
+
+  }, []);
+
+  return (
+    <main>
+      < Header />
+      <section className="panel" style={{ }}>
+         
+        <div className="page">
+          <h1 className="title orbitron-bold">Welcome to SolanAI</h1>
+          <p className="mt-4 text-lg">Your one-stop solution for all things Solana.</p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        
+      </section>
+
+      <section className="panel" style={{ height: "100vh" }}>
+        <div className="info orbitron-bold">
+          <div className="info-container">
+            <div className="info-left">
+              <h1>Why SolanAI?</h1>
+              <p className="arial-bold">
+                SolanAI is your AI-powered trading assistant engineered specifically for the fast-moving Solana market. Leveraging cutting-edge machine learning and real-time blockchain analytics, our platform transforms raw data into actionable insights.
+              </p>
+              <p className="arial-bold key-title">
+                <strong><LinearGradient gradient={['to left', '#00FFA3 ,#DC1FFF']}>Key Features Include:</LinearGradient></strong>
+              </p>
+            </div>
+            <div className="info-right">
+              <div className="feature-box">
+                <h2><span className="gradient-text">Real-Time Trade Signals</span></h2>
+                <p>Instant alerts and predictive analytics pinpoint optimal entry and exit points.</p>
+              </div>
+              <div className="feature-box">
+                <h2><span className="gradient-text">Adaptive Chatbot Assistance</span></h2>
+                <p>Interact with a dynamic AI chatbot offering personalized trading advice.</p>
+              </div>
+              <div className="feature-box">
+                <h2><span className="gradient-text">Dynamic Data Visualizations</span></h2>
+                <p>Experience sleek, interactive dashboards with vibrant Solana color accents.</p>
+              </div>
+              <div className="feature-box">
+                <h2><LinearGradient gradient={['to left', '#17acff ,#ff68f0']}>Holistic Market Insights</LinearGradient></h2>
+                <p>Combine on-chain activity with social sentiment for a comprehensive market overview.</p>
+              </div>
+            </div>
+          </div>
+          <Button buttonText={"Let's Get Started"} />
+        </div>
+      </section>
+
+
+
+      <section className="panel" style={{ height: "400vh"}}>
+        <div className="how-to orbitron-bold">
+          <h1>How to use SolanAI</h1>
+          <p className="mt-4 text-lg">We provide the best tools and resources for Solana developers.</p>
+          
+
+          <div className="timeline">
+            {/*<section className="timeline-step">First Step</section>
+            <section className="timeline-step">Second Step</section>
+            <section className="timeline-step">Third Step</section> */}
+            <div className="timeline-step">
+              <div className="wallet-icon">
+            <IoWalletOutline size={30}/>
+            </div>
+              <div className="step-text">
+                
+
+                <BubbleNumber number={1}/>
+                Input your desired wallets to be tracked.
+                </div>
+              <div className="wallet-info">
+                <a href="#">
+                  These wallets will be tracked by SolanAI, which will use the information to make trade recommendations -- choose carefully.
+                </a>
+              </div>
+              <div className="question-boxes">
+                <div className="question-box">
+                  Question Box 1: Some info or question here.
+                </div>
+                <div className="question-box">
+                  Question Box 2: Additional info or another question.
+                </div>
+              </div>
+            </div>
+            <div className="timeline-step">
+              <div className="step-text">
+                  < BubbleNumber number={2}/>
+                    Second Step
+              </div>
+
+
+            </div>
+            <div className="timeline-step">
+            < BubbleNumber number={3}/>
+              Third Step
+            </div>
+            <div className="timeline-step">
+            < BubbleNumber number={4}/>
+              Fourth step
+            </div>
+          </div>
+          </div>
+      </section>
+
+      <section className="panel" style={{ height: "100vh"}}>
+
+        <div className="info orbitron-bold" style={{height: "100vh"}}>
+          Holistic
+        </div>
+
+      </section>
+
+
+    </main>
+       
   );
 }
