@@ -10,7 +10,7 @@ import { Button } from "./components/Button";
 import { LinearGradient } from "react-text-gradients"; 
 import { BubbleNumber } from "./components/BubbleNumber";
 import { IoWalletOutline } from "react-icons/io5";
-
+import GradientText from './components/GradientText.js'
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -93,7 +93,16 @@ export default function Home() {
       <section className="panel" style={{ }}>
          
         <div className="page">
-          <h1 className="title orbitron-bold">Welcome to SolanAI</h1>
+          <h1 className="title orbitron-bold">
+            <GradientText
+              colors={["#00FFA3", "#03E1FF", "#DC1FFF", "#8d70de", "#40ffaa"]}
+              animationSpeed={8}
+              showBorder={false}
+              className="custom-class"
+            >
+              SolanAI
+            </GradientText>
+          </h1>
           <p className="mt-4 text-lg">Your one-stop solution for all things Solana.</p>
         </div>
 
@@ -138,15 +147,12 @@ export default function Home() {
 
 
       <section className="panel" style={{ height: "400vh"}}>
-        <div className="how-to orbitron-bold">
-          <h1>How to use SolanAI</h1>
-          <p className="mt-4 text-lg">We provide the best tools and resources for Solana developers.</p>
+        <div className="how-to">
+          <h1 className="how-to-header orbitron-bold">Before Using SolanAI</h1>
+          <p className="mt-4 text-lg">Complete this list of steps in order to make sure that the AI has access to the most accurate information.</p>
           
 
           <div className="timeline">
-            {/*<section className="timeline-step">First Step</section>
-            <section className="timeline-step">Second Step</section>
-            <section className="timeline-step">Third Step</section> */}
             <div className="timeline-step">
               <div className="wallet-icon">
             <IoWalletOutline size={30}/>
@@ -170,6 +176,7 @@ export default function Home() {
                   Question Box 2: Additional info or another question.
                 </div>
               </div>
+              
             </div>
             <div className="timeline-step">
               <div className="step-text">

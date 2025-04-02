@@ -12,14 +12,18 @@
     flex-direction: column;
   
     /* Set the background image */
-    background: url("/BG3.svg") no-repeat center center;
-    background-size: 100%;
+    background: #000000;
   }
   
-.title {
+
+  
+  /* Apply styles to the title class */
+  .title {
     font-size: 7rem;
-    color: #ffffff;
-}
+    font-weight: 700;
+  }
+
+
 
 .orbitron-bold {
     font-family: 'Orbitron', sans-serif;
@@ -49,8 +53,10 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    width: 100%;
+    width: 60%;
     gap: 40px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
 .info {
@@ -96,6 +102,12 @@
   /* Optional: Make sure your paragraphs in .info remain white */
   .info p {
     color: #ffffff;
+  }
+
+  .mt-4 {
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: 500;
   }
   
 
@@ -168,6 +180,7 @@
   display: flex;
   justify-content: center;
   gap: 10px;
+  font-weight: 600;
 }
 
 .wallet-icon {
