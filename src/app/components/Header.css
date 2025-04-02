@@ -40,7 +40,7 @@
     flex: 1; /* take up available space */
     display: flex;
     justify-content: center; /* center the navigation links */
-    margin-right: 11.5rem;
+    margin-right: 11rem;
     gap: 2rem;
   }
   
@@ -70,3 +70,13 @@
     background-color: #00a3cc;
   }
   
+  .socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-right: 20px;
+  }
+
+  .socials:hover {
+    fill: #ffffff;
+  }
