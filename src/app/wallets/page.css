@@ -67,12 +67,15 @@
   gap: 1rem;
   justify-content: center;
   margin-left: 4rem;
+  cursor: pointer;
+  color: #ffffff;
+  transition: color 0.2s ease-in-out;
 }
 
 .chat-icon:hover {
-  background-color: #cecece;
-  border-radius: 20px;
+  color: #6d6d6d
 }
+
 
 /* Tracker links box under header */
 .panel-links {
@@ -160,7 +163,7 @@
   margin-top: 5rem;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 .wallet-list-title {
@@ -171,7 +174,7 @@
 .wallet-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 12px;  
 }
 
 .wallet-item {
@@ -179,12 +182,19 @@
   align-items: center;
   justify-content: space-between;
   background-color: #000000;
+  
   border: 2px solid #3a3a3a;
   padding: 1rem;
   border-radius: 15px;
   color: #ffffff;
-  width: 60%;
+  width: 55%;
   height: 3rem;
+  font-weight: 600;
+  gap: 6px;
+}
+
+.wallet-item:hover {
+  background-color: #313131;
 }
 
 .wallet-details {
@@ -196,7 +206,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 5px;
 }
 
 /* Copy icon / checkmark */
@@ -215,16 +225,20 @@
 /* Remove button */
 .remove-button {
   background: none;
-  border: 1px solid #555;
   color: #fff;
   padding: 0.4rem 0.8rem;
-  border-radius: 4px;
+  border-radius: 30px;
   cursor: pointer;
   transition: background 0.2s ease-in-out;
 }
 
-.remove-button:hover {
-  background: #333;
+.trash-icon {
+  transition: fill 0.3s ease;
+  fill: #ffffff;
+}
+
+.remove-button:hover .trash-icon {
+  fill: red;
 }
 
 /* Copy message */
@@ -246,3 +260,70 @@
   opacity: 1;
 }
 
+.logo:hover {
+  animation: spin 1s linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.chart-icon {
+  transition: fill 0.3s ease;
+  fill: #ffffff;
+}
+
+.chart-icon:hover {
+  fill: #00ff1e;
+}
+
+.chart-icon-button {
+  cursor: pointer;
+}
+
+/* Overview panel that slides in from the right */
+.overview-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  background-color: #1a1a1a;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  padding: 1rem;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+/* When the panel is open, slide it into view */
+.overview-panel.open {
+  transform: translateX(0);
+}
+
+/* Style for the close button inside the overview panel */
+.close-overview {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-overview:hover {
+  background: #484848;
+}

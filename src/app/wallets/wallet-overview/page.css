@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Orbitron:wght@400..900&display=swap');
+
+.orbitron-bold {
+  font-family: 'Orbitron', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Main container for left panel + right panel */
+.dashboard-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background: #000; /* Keep the black background */
+}
+
+/* LEFT PANEL */
+.left-panel {
+  width: 20%;
+  height: 100vh;
+  background: rgba(215, 215, 215, 0.1);
+  box-shadow: 0 4px 6px rgba(146, 146, 146, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.panel-header {
+  width: 100%;
+  height: 15rem;
+  border-bottom: 1px solid #484848;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 1rem;
+}
+
+.logo-section {
+  margin-left: 1rem;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.Title {
+  font-size: 1.6rem;
+  color: #ffffff;
+}
+
+.Title:hover {
+  color: #cecece;
+}
+
+.logo-description {
+  color: #ffffff;
+  font-size: 0.7rem;
+  margin: 1rem;
+}
+
+.section-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-left: 4rem;
+}
+
+/* Tracker links box under header */
+.panel-links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tracker-links {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  width: 100%;
+}
+
+.link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 12px;
+  padding: 0.5rem 0rem;
+  font-weight: 900;
+
+}
+
+.link:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.link-text {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 2.2rem;
+  gap: 10px;
+}

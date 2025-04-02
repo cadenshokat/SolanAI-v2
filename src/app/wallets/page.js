@@ -13,6 +13,10 @@ import { TbClockHour4 } from "react-icons/tb";
 import { AiOutlineFire } from "react-icons/ai";
 import { IoChatboxOutline } from "react-icons/io5";
 import { RiGeminiLine } from "react-icons/ri";
+import { BsTrash3Fill } from "react-icons/bs";
+import { BsFillBarChartLineFill } from "react-icons/bs";
+import Loader from "../components/Loader"; // Import the Loader component
+import { IoClose } from "react-icons/io5";
 
 
 // Helper to truncate a long wallet address
@@ -32,6 +36,8 @@ const WalletTracker = () => {
   // Show/hide the "copied" message
   const [showMessage, setShowMessage] = useState(false);
   const [message, setMessage] = useState('');
+
+  const [showOverview, setShowOverview] = useState(false);
   
   // Load wallets from localStorage on mount
   useEffect(() => {
@@ -170,8 +176,10 @@ const WalletTracker = () => {
           <div className="wallet-list-container">
             <h3 className="wallet-list-title">My Wallets</h3>
             <div className="wallet-list">
-            {wallets.map((wallet, index) => (
+            
+            {wallets.map((wallet, index) => ( 
               <div key={index} className="wallet-item">
+                
                 <div className="wallet-details">
                   <span className="wallet-address">{truncateAddress(wallet)}</span>
                   <span
@@ -183,14 +191,21 @@ const WalletTracker = () => {
                 </div>
                 <div className="wallet-actions">
                   <button
+                    className="chart-icon-button"
+                    onClick={() => setShowOverview(true)}
+                  >
+                  <BsFillBarChartLineFill className="chart-icon" size={20}/>
+                  </button>
+                  <button
                     className="remove-button"
                     onClick={() => handleRemoveWallet(wallet)}
                   >
-                    Remove
+                    <BsTrash3Fill size={20} className="trash-icon"/>
                   </button>
                 </div>
               </div>
               ))}
+              
             </div>
 
           </div>
@@ -200,6 +215,13 @@ const WalletTracker = () => {
       {/* Copy success message */}
       <div className={`copy-message ${showMessage ? 'show' : ''}`}>
         {message}
+      </div>
+
+      <div className={`overview-panel ${showOverview ? "open" : ""}`}>
+        <button className="close-overview" onClick={() => setShowOverview(false)}>
+          <IoClose size={20}/>
+        </button>
+        <Loader/>
       </div>
     </main>
   );
