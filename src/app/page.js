@@ -10,7 +10,11 @@ import { Button } from "./components/Button";
 import { LinearGradient } from "react-text-gradients"; 
 import { BubbleNumber } from "./components/BubbleNumber";
 import { IoWalletOutline } from "react-icons/io5";
-import GradientText from './components/GradientText.js'
+import GradientText from './components/GradientText.js';
+import ShinyText from './effects/ShinyText';
+import { FaTwitter } from "react-icons/fa";
+import { SiSolana } from "react-icons/si";
+import Threads from './effects/Threads';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -90,56 +94,90 @@ export default function Home() {
   return (
     <main>
       < Header />
-      <section className="panel" style={{ }}>
-         
-        <div className="page">
-          <h1 className="title orbitron-bold">
-            <GradientText
-              colors={["#00FFA3", "#03E1FF", "#DC1FFF", "#8d70de", "#40ffaa"]}
-              animationSpeed={8}
-              showBorder={false}
-              className="custom-class"
-            >
-              SolanAI
-            </GradientText>
-          </h1>
-          <p className="mt-4 text-lg">Your one-stop solution for all things Solana.</p>
-        </div>
+      
 
-        
-      </section>
+{/* Background section with Threads and overlayed title */}
+<section className="panel" style={{ height: "100vh", position: "relative" }}>
+  <Threads
+    amplitude={.5}
+    distance={0}
+    enableMouseInteraction={false}
+    className="threads-container"
+  />
+  <div
+    style={{
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      zIndex: 2,
+      textAlign: "center",
+      color: "white",
+    }}
+  >
+    <h1 className="title orbitron-bold">
+      <GradientText
+        colors={["#00FFA3", "#03E1FF", "#DC1FFF", "#8d70de", "#40ffaa"]}
+        animationSpeed={8}
+        showBorder={false}
+        className="custom-class"
+      >
+        SolanAI
+      </GradientText>
+    </h1>
+    <p className="mt-4 text-lg">Your one-stop solution for all things Solana.</p>
+  </div>
+</section>
 
       <section className="panel" style={{ height: "100vh" }}>
         <div className="info orbitron-bold">
           <div className="info-container">
-            <div className="info-left">
-              <h1>Why SolanAI?</h1>
-              <p className="arial-bold">
-                SolanAI is your AI-powered trading assistant engineered specifically for the fast-moving Solana market. Leveraging cutting-edge machine learning and real-time blockchain analytics, our platform transforms raw data into actionable insights.
+              <p className="key-title arial-bold">
+                <strong><LinearGradient gradient={['to left', '#00FFA3 ,#DC1FFF']}>SOLANAI FEATURES</LinearGradient></strong>
               </p>
-              <p className="arial-bold key-title">
-                <strong><LinearGradient gradient={['to left', '#00FFA3 ,#DC1FFF']}>Key Features Include:</LinearGradient></strong>
-              </p>
-            </div>
-            <div className="info-right">
-              <div className="feature-box">
-                <h2><span className="gradient-text">Real-Time Trade Signals</span></h2>
-                <p>Instant alerts and predictive analytics pinpoint optimal entry and exit points.</p>
-              </div>
-              <div className="feature-box">
-                <h2><span className="gradient-text">Adaptive Chatbot Assistance</span></h2>
-                <p>Interact with a dynamic AI chatbot offering personalized trading advice.</p>
-              </div>
-              <div className="feature-box">
-                <h2><span className="gradient-text">Dynamic Data Visualizations</span></h2>
-                <p>Experience sleek, interactive dashboards with vibrant Solana color accents.</p>
-              </div>
-              <div className="feature-box">
-                <h2><LinearGradient gradient={['to left', '#17acff ,#ff68f0']}>Holistic Market Insights</LinearGradient></h2>
-                <p>Combine on-chain activity with social sentiment for a comprehensive market overview.</p>
-              </div>
-            </div>
+            <h1 className="why-solanai"><ShinyText text="Where On-Chain Meets Off-Chain" disabled={false} speed={3} className='custom-class' />
+            </h1>
           </div>
+
+        
+  <div className="card-container">
+    {/* Header Row */}
+    <div className="header-section">
+      <div className="card-header orbitron-bold">
+        <div>
+        <SiSolana size={20} color="white" />
+        <h2>On-Chain</h2>
+        </div>
+      </div>
+      <div className="card-header orbitron-bold">
+        <div>
+        <FaTwitter size={20} color="white"/>
+        <h2>Off-Chain</h2>
+        </div>
+      </div>
+    </div>
+    {/* Horizontal Divider */}
+    <div className="divider-line"></div>
+    {/* Content Row */}
+    <div className="content-section arial-bold">
+      <div className="card">
+        <p>
+          Explore blockchain analytics and on-chain metrics to gain insights
+          into real-time transactions.
+        </p>
+      </div>
+      <div className="card">
+        <p>
+          Dive into market sentiment and off-chain data to understand external
+          trends.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+
+
           <Button buttonText={"Let's Get Started"} />
         </div>
       </section>
@@ -150,16 +188,13 @@ export default function Home() {
         <div className="how-to">
           <h1 className="how-to-header orbitron-bold">Before Using SolanAI</h1>
           <p className="mt-4 text-lg">Complete this list of steps in order to make sure that the AI has access to the most accurate information.</p>
-          
-
+  
           <div className="timeline">
             <div className="timeline-step">
               <div className="wallet-icon">
             <IoWalletOutline size={30}/>
             </div>
               <div className="step-text">
-                
-
                 <BubbleNumber number={1}/>
                 Input your desired wallets to be tracked.
                 </div>
@@ -170,7 +205,10 @@ export default function Home() {
               </div>
               <div className="question-boxes">
                 <div className="question-box">
-                  Question Box 1: Some info or question here.
+                  Finding Profitable Wallets to Track
+                  <span className="question-box-span">
+                    Go to birdeye.so and filter throught the wallets to find the best addresses to track.
+                  </span>
                 </div>
                 <div className="question-box">
                   Question Box 2: Additional info or another question.

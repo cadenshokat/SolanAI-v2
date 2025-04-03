@@ -10,7 +10,6 @@
     justify-content: center;
     text-align: center;
     flex-direction: column;
-  
     /* Set the background image */
     background: #000000;
   }
@@ -19,10 +18,16 @@
   
   /* Apply styles to the title class */
   .title {
-    font-size: 7rem;
+    font-size: 7.5rem;
     font-weight: 700;
+    margin-bottom: 25rem;
   }
 
+  .custom-class {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
 
 
 .orbitron-bold {
@@ -42,32 +47,116 @@
 .arial-bold {
     font-family: "Arial", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 700;
+    font-weight: 400;
     font-style: normal;
 }
 
 
 /* Container for the left and right sections */
 .info-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 60%;
-    gap: 40px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center child items horizontally */
+  width: 60%;
+  gap: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Center text inside container */
+}
+
+/* Main container for header and content */
+.card-container {
+  width: 60%;
+  margin: 4rem auto 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+/* Header row for the two titles */
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Header styling */
+.card-header {
+  font-weight: 600;
+  color: #ffffff;
+  padding: 10px;
+  flex: 1;
+}
+
+.card-header > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; /* Adjust spacing between the icon and header text */
+}
+
+
+/* Horizontal divider below the headers */
+.divider-line {
+  width: 100%;
+  height: 2px;
+  background: #363636;
+  margin: 10px 0 20px 0;
+}
+
+/* Content row for the two info areas */
+.content-section {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  gap: 20px;
+  /* Ensure the content section fills available height */
+  height: calc(100vh - 200px); /* Adjust if necessary */
+  font-weight: 600;
+}
+
+/* Vertical divider between the two cards - extends full height of the page */
+.content-section::before {
+  content: "";
+  position: absolute;
+  top: -80px; /* Adjust this value as needed */
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: #363636;
+  transform: translateX(-50%);
+}
+
+
+/* Styling for each card */
+.card {
+  flex: 1;
+  padding: 20px;
+  background: #000000;
+  border-radius: 30px;
+  color: #ffffff;
+  z-index: 1; /* Ensure content appears above the divider */
+}
   
 .info {
   background: #000000;
 
 }
 
+.why-solanai {
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.key-title {
+  margin-top: 2rem;
+  font-weight: 300;
+  font-size: 1rem;
+}
   /* Left section styling */
   .info-left {
     flex: 1;
-    text-align: left;
+    text-align: center;
     padding-right: 20px;
   }
   
@@ -78,18 +167,7 @@
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
   }
-  
-  /* Feature box styling */
-  .feature-box {
-    background: #1a1a1a;
-    padding: 20px;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-  }
-  
-  .feature-box:hover {
-    transform: translateY(-5px);
-  }
+
   
   /* Gradient text effect for important words */
   .gradient-text {
