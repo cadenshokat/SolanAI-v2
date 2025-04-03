@@ -9,9 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/lab": "^7.0.0-beta.10",
+    "gsap": "^3.12.7",
+    "next": "15.2.4",
+    "ogl": "^1.0.11",
+    "particlesjs": "^2.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.2.4"
+    "react-icons": "^5.5.0",
+    "react-scroll-motion": "^0.3.5",
+    "react-text-gradients": "^1.0.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
