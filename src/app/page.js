@@ -15,7 +15,9 @@ import ShinyText from './effects/ShinyText';
 import { FaTwitter } from "react-icons/fa";
 import { SiSolana } from "react-icons/si";
 import Threads from './effects/Threads';
-
+import { GiSettingsKnobs } from "react-icons/gi";
+import { VscAccount } from "react-icons/vsc";
+import { FaRegLightbulb } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -98,12 +100,12 @@ export default function Home() {
 
 {/* Background section with Threads and overlayed title */}
 <section className="panel" style={{ height: "100vh", position: "relative" }}>
-  <Threads
+  {/*<Threads
     amplitude={.5}
     distance={0}
     enableMouseInteraction={false}
     className="threads-container"
-  />
+  />*/}
   <div
     style={{
       position: "absolute",
@@ -122,10 +124,10 @@ export default function Home() {
         showBorder={false}
         className="custom-class"
       >
-        SolanAI
+        Meet SolanAI
       </GradientText>
     </h1>
-    <p className="mt-4 text-lg">Your one-stop solution for all things Solana.</p>
+    <div className="title-description text-lg"><ShinyText text="Your one-stop solution for all things Solana." disabled={false} speed={3} className='custom-class' /></div>
   </div>
 </section>
 
@@ -138,42 +140,59 @@ export default function Home() {
             <h1 className="why-solanai"><ShinyText text="Where On-Chain Meets Off-Chain" disabled={false} speed={3} className='custom-class' />
             </h1>
           </div>
+          <div className="glow-card arial-bold">
+            SolanAI collets data from 30+ different high-quality indicators to make the most profiable decisions.
+          </div>
+          <div className="decor-box arial-bold">
+            hello
+            <div className="decor-box-child">
+
+            </div>
+            <div className="decor-box-child">
+              
+            </div>
+          </div>
 
         
-  <div className="card-container">
-    {/* Header Row */}
-    <div className="header-section">
-      <div className="card-header orbitron-bold">
-        <div>
-        <SiSolana size={20} color="white" />
-        <h2>On-Chain</h2>
-        </div>
-      </div>
-      <div className="card-header orbitron-bold">
-        <div>
-        <FaTwitter size={20} color="white"/>
-        <h2>Off-Chain</h2>
-        </div>
-      </div>
-    </div>
-    {/* Horizontal Divider */}
-    <div className="divider-line"></div>
-    {/* Content Row */}
-    <div className="content-section arial-bold">
-      <div className="card">
-        <p>
-          Explore blockchain analytics and on-chain metrics to gain insights
-          into real-time transactions.
-        </p>
-      </div>
-      <div className="card">
-        <p>
-          Dive into market sentiment and off-chain data to understand external
-          trends.
-        </p>
-      </div>
-    </div>
-  </div>
+          <div className="card-container">
+            {/* Header Row */}
+            <div className="header-section">
+              <div className="card-header orbitron-bold">
+                <div>
+                <SiSolana size={20} color="white" />
+                <h2>On-Chain Data</h2>
+                </div>
+              </div>
+              <div className="card-header orbitron-bold">
+                <div>
+                <FaTwitter size={20} color="white"/>
+                <h2>Off-Chain Data</h2>
+                </div>
+              </div>
+            </div>
+            {/* Horizontal Divider */}
+            <div className="divider-line"></div>
+            {/* Content Row */}
+            <div className="content-section arial-bold">
+              <div className="card">
+                <p>
+                  Listens directly on the blockchain for <span className="highlight"><LinearGradient gradient={['to left', '#00FFA3 ,#DC1FFF']}>whale</LinearGradient></span> transactions
+                </p>
+                <p>
+                  Uses wallet tracking to capture real-time information on potential investments. 
+                </p>
+                <p>
+
+                </p>
+              </div>
+              <div className="card">
+                <p>
+                  Dive into market sentiment and off-chain data to understand external
+                  trends.
+                </p>
+              </div>
+            </div>
+          </div>
 
 
 
@@ -186,16 +205,53 @@ export default function Home() {
 
       <section className="panel" style={{ height: "400vh"}}>
         <div className="how-to">
-          <h1 className="how-to-header orbitron-bold">Before Using SolanAI</h1>
-          <p className="mt-4 text-lg">Complete this list of steps in order to make sure that the AI has access to the most accurate information.</p>
+          <h1 className="how-to-header orbitron-bold"><ShinyText text="Before Using SolanAI" disabled={false} speed={3} className='custom-class' /></h1>
+          <div className="glow-card text-lg">Complete this list of steps in order to make sure that the AI has access to the most accurate information.</div>
   
           <div className="timeline">
+            <div className="timeline-step">            
+            
+                <div className="wallet-icon">
+                  <VscAccount size={30}/>
+                </div>
+                <div className="step-text">
+                  <BubbleNumber number={1}/>
+                  Create an account
+                  </div>
+                <div className="wallet-info">
+                  <a href="#">
+                  Sign up to unlock AI trade assistance, secure portfolio tracking, real-time alerts, and many more features.
+                  </a>
+                </div>
+                <div className="question-boxes">
+                  <div className="question-box">
+                    <div className="q-head orbitron-bold">
+                  Personalized Insights
+                    </div>
+                    <div className="question-box-span">
+                    Receive tailored market analysis and alerts based on your trading preferences.
+                    </div>
+                  </div>
+                  <div className="question-box">
+                    <div className="q-head orbitron-bold">
+                     Enhanced Security
+                    </div>
+                    <div className="question-box-span">
+                    Your data is encrypted and stored securely, ensuring your privacy and peace of mind.
+                    </div>
+                  </div>
+                </div>
+
+                <div className="signup-container" style={{ marginTop: "10rem" }}>
+                  <Button className="signup-button" buttonText={"Let's Get Started"} />
+                </div>
+              </div>
             <div className="timeline-step">
               <div className="wallet-icon">
             <IoWalletOutline size={30}/>
             </div>
               <div className="step-text">
-                <BubbleNumber number={1}/>
+                <BubbleNumber number={2}/>
                 Input your desired wallets to be tracked.
                 </div>
               <div className="wallet-info">
@@ -205,9 +261,15 @@ export default function Home() {
               </div>
               <div className="question-boxes">
                 <div className="question-box">
-                  Finding Profitable Wallets to Track
+                <div className="q-head orbitron-bold">
+                  <FaRegLightbulb size={20}/>
+                  Finding Reliable Wallets
+                </div>
                   <span className="question-box-span">
-                    Go to birdeye.so and filter throught the wallets to find the best addresses to track.
+                    Input reliable wallets in order to ensure the best accuracy from SolanAI.
+                  </span>
+                  <span className="question-box-span">
+                    SolanAI will use the wallets to gain insights on potential buys.
                   </span>
                 </div>
                 <div className="question-box">
@@ -217,22 +279,86 @@ export default function Home() {
               
             </div>
             <div className="timeline-step">
-              <div className="step-text">
-                  < BubbleNumber number={2}/>
-                    Second Step
+              <div className="wallet-icon">
+                <GiSettingsKnobs size={30} />
               </div>
+              <div className="step-text">
+                <BubbleNumber number={3} />
+                Configure Your Trading Settings.
+              </div>
+              <div className="step-3">
+                Tailor your strategy with settings that adjust relatively based on AI insights.
+              </div>
+              <div className="settings-panel">
+                <div className="setting-row">
+                  <div className="setting-label">Risk Level</div>
+                  <div className="setting-options">
+                    <span className="option">Low</span>
+                    <span className="option">Moderate</span>
+                    <span className="option">High</span>
+                  </div>
+                </div>
+                <div className="setting-row">
+                  <div className="setting-label">Trade Amount</div>
+                  <div className="setting-options">
+                    <input
+                      type="range"
+                      min="0"
+                      max="100"
+                      defaultValue="50"
+                      className="preference-slider"
+                    />
+                    <span className="option-value">50%</span>
+                  </div>
+                </div>
+                <div className="setting-row">
+                  <div className="setting-label">Trading Frequency</div>
+                  <div className="setting-options">
+                    <span className="option">Conservative</span>
+                    <span className="option">Moderate</span>
+                    <span className="option">Aggressive</span>
+                  </div>
+                </div>
+                <div className="setting-row">
+                  <div className="setting-label">Stop Loss (%)</div>
+                  <div className="setting-options">
+                    <input type="number" placeholder="e.g., 5" className="stop-loss" />
+                  </div>
+                  <div className="setting-label">Take Profit (%)</div>
+                  <div className="setting-options">
+                    <input type="number" placeholder="e.g., 10" className="take-profit" />
+                  </div>
+                </div>
 
+                <div className="setting-row-button">
+                  <button className="save-settings-button">
+                    Save
+                  </button>
+                </div>
+                
+                
+                
+                {/* Add more relative settings as needed */}
+              </div>
+              <div className="extra-div">
+                Extra
+              </div>
+              
+            </div>
 
-            </div>
             <div className="timeline-step">
-            < BubbleNumber number={3}/>
-              Third Step
+              <div className="wallet-icon">
+                <GiSettingsKnobs size={30}/>
+              </div>
+              <div className="step-text">
+                < BubbleNumber number={4}/>
+                  Third Step
+              </div>
             </div>
-            <div className="timeline-step">
-            < BubbleNumber number={4}/>
-              Fourth step
-            </div>
+            
+            
           </div>
+          
           </div>
       </section>
 
