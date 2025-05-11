@@ -18,10 +18,12 @@ import Threads from './effects/Threads';
 import { GiSettingsKnobs } from "react-icons/gi";
 import { VscAccount } from "react-icons/vsc";
 import { FaRegLightbulb } from "react-icons/fa";
+import { Footer } from "./components/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
+  {/*
 
   useEffect(() => {
     const tl = gsap.timeline({
@@ -85,13 +87,13 @@ export default function Home() {
         ScrollTrigger.create({
             trigger: panel,
             start: "top top",
-            pin: true,
+            pin: false,
             pinSpacing: false,
             markers: false,
         });
     });
 
-  }, []);
+  }, []); */}
 
   return (
     <main>
@@ -369,6 +371,7 @@ export default function Home() {
         </div>
 
       </section>
+      <Footer />
 
 
     </main>

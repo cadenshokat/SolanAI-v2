@@ -2,7 +2,7 @@
 import './Header.css';
 import React from 'react';
 import Image from 'next/image';
-import Logo from '../../../public/favicon.svg';
+import Logo from '../../../public/SolanAI-1-removebg.png';
 import Link from 'next/link';
 import { LuGithub } from "react-icons/lu";
 import { CiLinkedin } from "react-icons/ci";
@@ -28,7 +28,7 @@ export function Header() {
 
       <nav className="socials">
         <div className="git"><Link href="https://github.com/cadenshokat/SolanAI-v2" target="_blank"><LuGithub size={20} color="white"/></Link></div>
-        <div className="linked-in"><Link href="www.linkedin.com/in/caden-shokat-866766300"><CiLinkedin size={23} color="white"/></Link></div>
+        <div className="linked-in"><Link href="https://www.linkedin.com/in/caden-shokat-866766300" target="_blank"><CiLinkedin size={23} color="white"/></Link></div>
       </nav>
     </header>
   );
