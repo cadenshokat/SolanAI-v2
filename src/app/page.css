@@ -427,7 +427,6 @@
 
 .setting-options {
   display: flex;
-  
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -448,6 +447,7 @@
 }
 
 .preference-slider {
+  appearance: none;
   -webkit-appearance: none;
   width: 150px;
   height: 4px;
