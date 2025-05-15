@@ -12,7 +12,9 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/lab": "^7.0.0-beta.10",
+    "clsx": "^2.1.1",
     "gsap": "^3.12.7",
+    "motion": "^12.11.0",
     "next": "15.2.4",
     "ogl": "^1.0.11",
     "particlesjs": "^2.2.3",
@@ -20,7 +22,8 @@
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
     "react-scroll-motion": "^0.3.5",
-    "react-text-gradients": "^1.0.2"
+    "react-text-gradients": "^1.0.2",
+    "tailwind-merge": "^3.3.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
