@@ -5,7 +5,7 @@ import { FiCopy } from "react-icons/fi";
 import { IoMdCheckmark } from "react-icons/io";
 import { Header } from "../components/Header";
 import AddButton from "../components/AddButton";
-import Logo from '../../../public/favicon.svg';
+import Logo from '../../../public/SolanAI-1-removebg.png';
 import Link from "next/link";
 import Image from "next/image";
 import { HiOutlineWallet } from "react-icons/hi2";
